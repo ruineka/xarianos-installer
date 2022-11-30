@@ -25,4 +25,5 @@ syslinux
 usbutils
 wget
 zsh
+frzr
 networkmanager
