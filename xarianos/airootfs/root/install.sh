@@ -8,12 +8,24 @@ fi
 
 dmesg --console-level 1
 
+##################
+Set up permissions
+##################
+chmod 777 /usr/bin/frzr-unlock
+chmod 777 /usr/bin/frzr-release
+chmod 777 /usr/bin/frzr-deploy
+chmod 777 /usr/bin/__frzr-deploy
+chmod 777 /usr/bin/frzr-bootstrap
+
 #######################################
 
 if ! frzr-bootstrap xarian; then
     whiptail --msgbox "System bootstrap step failed." 10 50
     exit 1
 fi
+
+# Connect to network
+nmtui-connect
 
 #### Post install steps for system configuration
 # Copy over all network configuration from the live session to the system
