@@ -1,0 +1,10 @@
+[Unit]
+Description=frzr automatic updates
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=frzr-deploy
+RemainAfterExit=false
+StandardOutput=journal
